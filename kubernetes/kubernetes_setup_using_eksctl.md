@@ -4,6 +4,16 @@ You can follow same procedure in the official  AWS document [Getting started wit
 
 #### Pre-requisites: 
   - an EC2 Instance 
+  - install aws-authenticator
+     ```sh
+     curl -o aws-iam-authenticator https://s3.us-west-2.amazonaws.com/amazon-eks/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator
+     curl -o aws-iam-authenticator.sha256 https://s3.us-west-2.amazonaws.com/amazon-eks/1.21.2/2021-07-05/bin/linux/amd64/aws-iam-authenticator.sha256
+     openssl sha1 -sha256 aws-iam-authenticator
+     chmod +x ./aws-iam-authenticator
+     mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
+     echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+     aws-iam-authenticator help
+     ```
 
 #### AWS EKS Setup 
 1. Setup kubectl   
