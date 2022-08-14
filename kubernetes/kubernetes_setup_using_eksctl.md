@@ -37,18 +37,12 @@ You can follow same procedure in the official  AWS document [Getting started wit
 
 4. Create your cluster and nodes 
    ```sh
-   eksctl create cluster --name cluster-name  \
-   --region region-name \
-   --node-type instance-type \
+   eksctl create cluster --name demo-cluster  \
+   --region ap-south-1 \
+   --node-type t2.micro \
    --nodes-min 2 \
    --nodes-max 2 \ 
    --zones <AZ-1>,<AZ-2>
-   
-   example:
-   eksctl create cluster --name valaxy-cluster \
-      --region ap-south-1 \
-   --node-type t2.small \
-    ```
 
 5. To delete the EKS clsuter 
    ```sh 
